@@ -44,27 +44,17 @@ function newSlice(array, one, two) {
 
 //  splice
 
-function newSplice(arr, number1, deleteCount, number2) {
-  let spliceResult = [];
-  let newArray = [];
-  const end = number1 + deleteCount;
-  if (number1 < 0)
-      number1 += arr.length;
-  for (let i = number1; i < end; i++) {
-      spliceResult.push(arr[i]);
-  }
-  for (let j = 0; j < arr.length; j++) {
-      if (j === number1) {
-          j += deleteCount;
-          if (number2 != undefined)
-              newArray.push(number2);
-      }
-      newArray.push(array[j])
-  }
-  return spliceResult;
-}
-const array = [5, 10, 15, 20, 25, 30];
-console.log(newSplice(array, 2, 5, 40));
+Array.prototype.newSplice = function (number1, remove, insert) {
+  let deleteNumber = this.slice(number1, number1 + remove);
+  let array = this.slice(0, number1).concat(insert, this.slice(number1 + remove));
+  this.length = 0;
+  this.push.apply(this, array);
+  return deleteNumber;
+};
+
+let tempArray = ["mahsa", "mohammd","nazanin", "saied"];
+console.log(tempArray.newSplice(0, 2, "ghazal"));
+console.log(tempArray);
 
 // some 
 function newSome(array){
