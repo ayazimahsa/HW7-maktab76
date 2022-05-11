@@ -1,0 +1,37 @@
+.container{
+    width: 30%;
+    height: 700px;
+    border-left: 15px solid;
+    border-top: 15px solid ;
+    border-right: 6px solid;
+    border-bottom: 6px solid;
+}
+
+.squares{
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 120px;
+    width: 120px;
+}
+
+.squares > div{
+     width: 80px;
+     height: 80px;
+     margin: 5px;
+     border: 3px solid;
+}
+
+.squares1, .squares2{
+    background-color: #c7c7c7;
+
+}
+
+.squares3{
+    background-color: rgb(252, 73, 142);
+    box-shadow: 10px 15px #919191;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+
